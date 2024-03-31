@@ -17,13 +17,21 @@ function NotionPageRenderer(props: { pageId: string }) {
       try {
         let page = "";
         switch (_pageService.currentPage.value) {
-          case "df413ff0-fbd6-4509-8fbb-247eee008f00":
+          case "df413ff0-fbd6-4509-8fbb-247eee008f00": {
             page = EPages.bigCountry;
-          case "93f73112-361d-429e-a725-f67f7d6f235f":
+            break;
+          }
+          case "93f73112-361d-429e-a725-f67f7d6f235f": {
             page = EPages.cae;
-          case "535c0de4-3070-464a-9e61-9001fa701936":
+            break;
+          }
+          case "535c0de4-3070-464a-9e61-9001fa701936": {
             page = EPages.introduction;
+            break;
+          }
         }
+
+        console.log(page);
 
         await fetch(`/api/hello?pageId=${page}`).then((res) => res.json().then((res) => setPageData(res)));
       } catch (error) {
