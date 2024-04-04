@@ -29,9 +29,15 @@ function NotionPageRenderer(props: { pageId: string }) {
             page = EPages.introduction;
             break;
           }
+          case "530fa9cf-0792-4d05-86e5-b9291c98c122": {
+            page = EPages.finalAct;
+            break;
+          }
+          case "453dd449-1597-45cd-9206-ea98e349499a": {
+            page = EPages.feedback;
+            break;
+          }
         }
-
-        console.log(page);
 
         await fetch(`/api/hello?pageId=${page}`).then((res) => res.json().then((res) => setPageData(res)));
       } catch (error) {

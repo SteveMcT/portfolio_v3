@@ -25,7 +25,7 @@ export function ScrollWrapper() {
   });
 
   return (
-    <animated.div style={springProps} id="scroll-container">
+    <animated.div style={springProps} id="scroll-container" className={show ? "pointer-events-auto" : "pointer-events-none"}>
       <div className="scroll-header">
         <button onClick={() => _pageService.currentPageOpen.next(false)}>
           <CloseOutline />
