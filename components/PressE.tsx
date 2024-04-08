@@ -33,7 +33,7 @@ export function PressE() {
   };
 
   return (
-    <animated.div style={springProps} id="pressE">
+    <animated.div style={springProps} className="absolute bottom-8 p-5 grid items-center left-[50%] translate-x-[-50%] rounded-full bg-[#fffb]">
       Press E
     </animated.div>
   );

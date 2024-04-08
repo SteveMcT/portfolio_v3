@@ -1,5 +1,6 @@
 import { animated, useSpring } from "@react-spring/web";
 import { useState } from "react";
+import { CloseOutline } from "react-ionicons";
 
 export default function MusicPlayer() {
   const [show, setShow] = useState<boolean>(false);
@@ -14,13 +15,15 @@ export default function MusicPlayer() {
 
   return (
     <>
-      <button onClick={setOpen} className="fixed top-5 bg-white rounded px-4 py-2 justify-self-start left-5 cursor-pointer">
+      <button onClick={setOpen} className="fixed top-5 bg-white rounded px-4 py-2 justify-self-start left-5">
         🎵 Check out the song I made 🎵
       </button>
-
-      <div className={show ? "h-full w-full grid place-items-center fixed top-0" : "fixed top-0 pointer-events-none"}>
+      {/* <div className={show ? "h-full w-full grid place-items-center fixed top-0" : "fixed top-0 pointer-events-none"}> */}
+      <div className={`h-full w-full grid place-items-center fixed top-0 ${!show && "pointer-events-none"}`}>
         <animated.div className="bg-orange-500 p-20 z-10 h-[90vh] w-[90vw] rounded-lg text-white" style={props}>
-          <button onClick={setOpen}>Close</button>
+          <button className=" text-white" onClick={setOpen}>
+            <CloseOutline color="white" />
+          </button>
 
           <div className="grid items-center w-full h-full">
             <div className="flex w-full gap-10 font-sans">

@@ -25,14 +25,14 @@ export function ScrollWrapper() {
   });
 
   return (
-    <animated.div style={springProps} id="scroll-container" className={show ? "pointer-events-auto" : "pointer-events-none"}>
-      <div className="scroll-header">
+    <animated.div style={springProps} id="scroll-container" className={`absolute w-[80vw] p-8 !top-[2rem] z-10 bg-[#f5dc9f] ${show ? "pointer-events-auto" : "pointer-events-none"}`}>
+      <div>
         <button onClick={() => _pageService.currentPageOpen.next(false)}>
           <CloseOutline />
         </button>
       </div>
 
-      <div className="scroll-content">{page && <NotionPageRenderer pageId={page} />}</div>
+      <div className="scroll-content !overflow-scroll">{page && <NotionPageRenderer pageId={page} />}</div>
     </animated.div>
   );
 }

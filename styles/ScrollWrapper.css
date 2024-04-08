@@ -1,32 +1,12 @@
 #scroll-container {
-  position: absolute;
-  width: 80vw;
   margin: 0 auto;
-  padding: 3rem;
   left: 50%;
-  top: 2rem;
   height: calc(100vh - 2rem);
   transform: translateX(-50%);
-  background: #f5dc9f;
-  z-index: 2;
 }
 
 #scroll-container .scroll-content {
-  height: fit-content;
-  overflow: scroll !important;
   height: calc(100% - 2rem);
-}
-
-#pressE {
-  position: absolute;
-  bottom: 8rem;
-  background: #fffb;
-  padding: 2rem;
-  display: grid;
-  place-items: center;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
 }
 
 iframe {

@@ -2,11 +2,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { NotionAPI } from "notion-client";
 
+const notion = new NotionAPI();
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const pageId = req.query.pageId;
   if (!pageId || typeof pageId !== "string") return res.status(404).send("Not Found!");
 
-  const notion = new NotionAPI();
   const map = await notion.getPage(pageId);
 
   res.status(200).json(map);
