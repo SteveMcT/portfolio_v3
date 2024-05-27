@@ -15,6 +15,8 @@ function NotionPageRenderer(props: { pageId: string }) {
     setIsLoading(true);
     const fetchData = async () => {
       try {
+        console.log(_pageService.currentPage.value);
+
         let page = "";
         switch (_pageService.currentPage.value) {
           case "df413ff0-fbd6-4509-8fbb-247eee008f00": {
@@ -35,6 +37,10 @@ function NotionPageRenderer(props: { pageId: string }) {
           }
           case "453dd449-1597-45cd-9206-ea98e349499a": {
             page = EPages.feedback;
+            break;
+          }
+          case "87b8bb4e-d4ce-42ec-8b56-19a424e2b35a": {
+            page = EPages.usa;
             break;
           }
         }
